@@ -22,6 +22,7 @@
 		6F9AE8BE16F28D020034BB2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE8BD16F28D020034BB2D /* MapKit.framework */; };
 		6F9AE8C016F28D180034BB2D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */; };
 		6F9AE8C216F298100034BB2D /* Post-it-note-white-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */; };
+		6F9AE8C516F500140034BB2D /* ACPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AE8C416F500140034BB2D /* ACPNote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		6F9AE8BD16F28D020034BB2D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Post-it-note-white-bg.jpg"; sourceTree = "<group>"; };
+		6F9AE8C316F500140034BB2D /* ACPNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPNote.h; sourceTree = "<group>"; };
+		6F9AE8C416F500140034BB2D /* ACPNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPNote.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 		6F9AE89D16F238620034BB2D /* ACPNotes */ = {
 			isa = PBXGroup;
 			children = (
+				6F9AE8C416F500140034BB2D /* ACPNote.m */,
+				6F9AE8C316F500140034BB2D /* ACPNote.h */,
 				6F9AE8A616F238620034BB2D /* ACPAppDelegate.h */,
 				6F9AE8A716F238620034BB2D /* ACPAppDelegate.m */,
 				6F9AE8AF16F238620034BB2D /* MainStoryboard.storyboard */,
@@ -195,6 +200,7 @@
 				6F9AE8A816F238620034BB2D /* ACPAppDelegate.m in Sources */,
 				6F9AE8B416F238620034BB2D /* ACPMasterViewController.m in Sources */,
 				6F9AE8B716F238620034BB2D /* ACPDetailViewController.m in Sources */,
+				6F9AE8C516F500140034BB2D /* ACPNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

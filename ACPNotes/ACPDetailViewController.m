@@ -7,6 +7,8 @@
 //
 
 #import "ACPDetailViewController.h"
+#import "ACPNote.h"
+
 
 @interface ACPDetailViewController ()
 - (void)configureView;
@@ -22,7 +24,8 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+
+- (void)setDetailItem:(id) newDetailItem
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -37,7 +40,9 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.noteTitle.text = [self.detailItem title];
+        self.description.textColor = [UIColor blackColor];
+        self.description.text = [self.detailItem description];
     }
 }
 
@@ -45,16 +50,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
-    [self setUpMap];
-    [self setUpDescription];
     if (self.showDetail)
         [self setUpEditDone];
+    
+    [self setUpMap];
+    [self setUpDescription];
     self.noteTitle.enabled = self.isEditable;
     [self.noteTitle becomeFirstResponder];
+    [self configureView];
 
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,10 +68,8 @@
 }
 
 -(void)setUpEditDone{
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editView:)];
     self.navigationItem.rightBarButtonItem = rightButton;
-
-    
 }
 
 - (IBAction)dismissView:(id)sender {
@@ -75,15 +77,12 @@
     self.description.editable = NO;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editView:)];
     self.navigationItem.rightBarButtonItem = rightButton;
-
-
 }
 
 - (IBAction)editView:(id)sender {
     self.noteTitle.enabled = YES;
     self.description.editable = YES;
     [self.noteTitle becomeFirstResponder];
-
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView:)];
     self.navigationItem.rightBarButtonItem = rightButton;
 }
@@ -123,13 +122,11 @@
 
 #pragma mark - CLLocationManagerDelegate methods
 -(void)setUpMap{
-    
     if (!self.locationManager)
         self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     self.locationManager.distanceFilter = 1000;
-    
     [self.locationManager startMonitoringSignificantLocationChanges];
 }
 

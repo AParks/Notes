@@ -7,6 +7,7 @@
 //
 
 #import "ACPMasterViewController.h"
+#import "ACPNote.h"
 
 #import "ACPDetailViewController.h"
 
@@ -35,7 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(NSString*) note
+- (void)insertNewObject:(ACPNote*) note
 {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
@@ -62,8 +63,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSString *object = _objects[indexPath.row];
-    cell.textLabel.text = object;
+    ACPNote *note = _objects[indexPath.row];
+    cell.textLabel.text = note.title;
     return cell;
 }
 
@@ -101,7 +102,10 @@
 
 - (IBAction)unwindFromDetail:(UIStoryboardSegue *)segue {
     ACPDetailViewController *srcViewController = segue.sourceViewController;
-    [self insertNewObject: srcViewController.noteTitle.text];
+    ACPNote *note = [[ACPNote alloc] init];
+    note.title = srcViewController.noteTitle.text;
+    note.description = srcViewController.description.text;
+    [self insertNewObject: note];
     
 }
 
@@ -111,8 +115,8 @@
         
         ACPDetailViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [destViewController setDetailItem:object];
+        ACPNote *note = _objects[indexPath.row];
+        [destViewController setDetailItem:note];
         
         destViewController.isEditable = NO;
         destViewController.showDetail = YES;
@@ -121,15 +125,7 @@
     }
     else if ([[segue identifier] isEqualToString:@"addNote"]) {
         ACPDetailViewController *destViewController = segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [destViewController setDetailItem:object];
-                
         destViewController.isEditable = YES;
-   
-
-
-        
     }
 }
 
