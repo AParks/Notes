@@ -19,6 +19,9 @@
 		6F9AE8B116F238620034BB2D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F9AE8AF16F238620034BB2D /* MainStoryboard.storyboard */; };
 		6F9AE8B416F238620034BB2D /* ACPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AE8B316F238620034BB2D /* ACPMasterViewController.m */; };
 		6F9AE8B716F238620034BB2D /* ACPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AE8B616F238620034BB2D /* ACPDetailViewController.m */; };
+		6F9AE8BE16F28D020034BB2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE8BD16F28D020034BB2D /* MapKit.framework */; };
+		6F9AE8C016F28D180034BB2D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */; };
+		6F9AE8C216F298100034BB2D /* Post-it-note-white-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		6F9AE8B316F238620034BB2D /* ACPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACPMasterViewController.m; sourceTree = "<group>"; };
 		6F9AE8B516F238620034BB2D /* ACPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACPDetailViewController.h; sourceTree = "<group>"; };
 		6F9AE8B616F238620034BB2D /* ACPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACPDetailViewController.m; sourceTree = "<group>"; };
+		6F9AE8BD16F28D020034BB2D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Post-it-note-white-bg.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F9AE8C016F28D180034BB2D /* CoreLocation.framework in Frameworks */,
+				6F9AE8BE16F28D020034BB2D /* MapKit.framework in Frameworks */,
 				6F9AE89816F238620034BB2D /* UIKit.framework in Frameworks */,
 				6F9AE89A16F238620034BB2D /* Foundation.framework in Frameworks */,
 				6F9AE89C16F238620034BB2D /* CoreGraphics.framework in Frameworks */,
@@ -59,6 +67,8 @@
 		6F9AE88B16F238620034BB2D = {
 			isa = PBXGroup;
 			children = (
+				6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */,
+				6F9AE8BD16F28D020034BB2D /* MapKit.framework */,
 				6F9AE89D16F238620034BB2D /* ACPNotes */,
 				6F9AE89616F238620034BB2D /* Frameworks */,
 				6F9AE89516F238620034BB2D /* Products */,
@@ -101,6 +111,7 @@
 		6F9AE89E16F238620034BB2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */,
 				6F9AE89F16F238620034BB2D /* ACPNotes-Info.plist */,
 				6F9AE8A016F238620034BB2D /* InfoPlist.strings */,
 				6F9AE8A316F238620034BB2D /* main.m */,
@@ -169,6 +180,7 @@
 				6F9AE8AC16F238620034BB2D /* Default@2x.png in Resources */,
 				6F9AE8AE16F238620034BB2D /* Default-568h@2x.png in Resources */,
 				6F9AE8B116F238620034BB2D /* MainStoryboard.storyboard in Resources */,
+				6F9AE8C216F298100034BB2D /* Post-it-note-white-bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
