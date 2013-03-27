@@ -10,5 +10,8 @@
 
 @implementation ACPNote
 
+- (CLLocationCoordinate2D)getLocation{
+    return self.location;
+}
 
 @end

@@ -43,6 +43,7 @@
         self.noteTitle.text = [self.detailItem title];
         self.description.textColor = [UIColor blackColor];
         self.description.text = [self.detailItem description];
+        self.location = [self.detailItem getLocation];
     }
 }
 
@@ -53,10 +54,9 @@
     if (self.showDetail)
         [self setUpEditDone];
     
+    [self.noteTitle becomeFirstResponder];
     [self setUpMap];
     [self setUpDescription];
-    self.noteTitle.enabled = self.isEditable;
-    [self.noteTitle becomeFirstResponder];
     [self configureView];
 
 }
@@ -69,14 +69,20 @@
 
 -(void)setUpEditDone{
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editView:)];
+    self.noteTitle.enabled = NO;
     self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (IBAction)dismissView:(id)sender {
+    
     self.noteTitle.enabled = NO;
     self.description.editable = NO;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editView:)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    [self.detailItem setDescription:self.description.text];
+    [self.detailItem setTitle:self.noteTitle.text];
+
+
 }
 
 - (IBAction)editView:(id)sender {
@@ -127,24 +133,30 @@
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     self.locationManager.distanceFilter = 1000;
-    [self.locationManager startMonitoringSignificantLocationChanges];
+       
+    if(self.addNote)
+        [self.locationManager startMonitoringSignificantLocationChanges];
+
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.location, 2000, 2000);
+    [self.mapView setRegion:region animated:NO];
+    [self.mapView setCenterCoordinate:self.location animated:YES];
+    [self addPinToMapAtLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *location = [locations lastObject];\
+    CLLocation *location = [locations lastObject];
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000);
-    [self.mapView setRegion:region animated:NO];
-    [self.mapView setCenterCoordinate:location.coordinate animated:YES];
-    [self addPinToMapAtLocation:location];
+    self.location = location.coordinate;
+    NSLog(@"%f , %f", self.location.latitude, self.location.longitude);
+
     [self.locationManager stopMonitoringSignificantLocationChanges];
 }
 
-- (void)addPinToMapAtLocation:(CLLocation *)location
+- (void)addPinToMapAtLocation
 {
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = location.coordinate;
+    pin.coordinate = self.location;
     [self.mapView addAnnotation:pin];
 }
 

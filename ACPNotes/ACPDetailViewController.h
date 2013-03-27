@@ -19,11 +19,10 @@
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UITextField *noteTitle;
+@property CLLocationCoordinate2D location;
+
 @property BOOL isEditable;
 @property BOOL showDetail;
-
-
-
-
+@property BOOL addNote;
 
 @end

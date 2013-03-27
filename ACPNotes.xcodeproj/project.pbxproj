@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0FDDF31700EE9700DA7EAB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0FDDF21700EE9700DA7EAB /* CoreData.framework */; };
 		6F9AE89816F238620034BB2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE89716F238620034BB2D /* UIKit.framework */; };
 		6F9AE89A16F238620034BB2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE89916F238620034BB2D /* Foundation.framework */; };
 		6F9AE89C16F238620034BB2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE89B16F238620034BB2D /* CoreGraphics.framework */; };
@@ -23,9 +24,13 @@
 		6F9AE8C016F28D180034BB2D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */; };
 		6F9AE8C216F298100034BB2D /* Post-it-note-white-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */; };
 		6F9AE8C516F500140034BB2D /* ACPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9AE8C416F500140034BB2D /* ACPNote.m */; };
+		6FB4E38B17027C8400D5F9F8 /* ACPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4E38A17027C8400D5F9F8 /* ACPDataManager.m */; };
+		6FB4E38C17028B2400D5F9F8 /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FDE2B1700F11900DA7EAB /* Note.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F0FDDF21700EE9700DA7EAB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6F0FDE2C1700F11900DA7EAB /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
 		6F9AE89416F238620034BB2D /* ACPNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACPNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9AE89716F238620034BB2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6F9AE89916F238620034BB2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +54,8 @@
 		6F9AE8C116F298100034BB2D /* Post-it-note-white-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Post-it-note-white-bg.jpg"; sourceTree = "<group>"; };
 		6F9AE8C316F500140034BB2D /* ACPNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPNote.h; sourceTree = "<group>"; };
 		6F9AE8C416F500140034BB2D /* ACPNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPNote.m; sourceTree = "<group>"; };
+		6FB4E38917027C8400D5F9F8 /* ACPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPDataManager.h; sourceTree = "<group>"; };
+		6FB4E38A17027C8400D5F9F8 /* ACPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0FDDF31700EE9700DA7EAB /* CoreData.framework in Frameworks */,
 				6F9AE8C016F28D180034BB2D /* CoreLocation.framework in Frameworks */,
 				6F9AE8BE16F28D020034BB2D /* MapKit.framework in Frameworks */,
 				6F9AE89816F238620034BB2D /* UIKit.framework in Frameworks */,
@@ -70,6 +78,8 @@
 		6F9AE88B16F238620034BB2D = {
 			isa = PBXGroup;
 			children = (
+				6F0FDE2B1700F11900DA7EAB /* Note.xcdatamodeld */,
+				6F0FDDF21700EE9700DA7EAB /* CoreData.framework */,
 				6F9AE8BF16F28D180034BB2D /* CoreLocation.framework */,
 				6F9AE8BD16F28D020034BB2D /* MapKit.framework */,
 				6F9AE89D16F238620034BB2D /* ACPNotes */,
@@ -109,6 +119,8 @@
 				6F9AE8B516F238620034BB2D /* ACPDetailViewController.h */,
 				6F9AE8B616F238620034BB2D /* ACPDetailViewController.m */,
 				6F9AE89E16F238620034BB2D /* Supporting Files */,
+				6FB4E38917027C8400D5F9F8 /* ACPDataManager.h */,
+				6FB4E38A17027C8400D5F9F8 /* ACPDataManager.m */,
 			);
 			path = ACPNotes;
 			sourceTree = "<group>";
@@ -201,6 +213,8 @@
 				6F9AE8B416F238620034BB2D /* ACPMasterViewController.m in Sources */,
 				6F9AE8B716F238620034BB2D /* ACPDetailViewController.m in Sources */,
 				6F9AE8C516F500140034BB2D /* ACPNote.m in Sources */,
+				6FB4E38B17027C8400D5F9F8 /* ACPDataManager.m in Sources */,
+				6FB4E38C17028B2400D5F9F8 /* Note.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +337,22 @@
 				6F9AE8BC16F238620034BB2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6F0FDE2B1700F11900DA7EAB /* Note.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F0FDE2C1700F11900DA7EAB /* Note.xcdatamodel */,
+			);
+			currentVersion = 6F0FDE2C1700F11900DA7EAB /* Note.xcdatamodel */;
+			path = Note.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6F9AE88C16F238620034BB2D /* Project object */;
 }
